@@ -18,6 +18,10 @@
 		EA28EC13297C8B7900A1A695 /* PrayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC12297C8B7900A1A695 /* PrayService.swift */; };
 		EA28EC16297C8E2400A1A695 /* PrayInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC15297C8E2400A1A695 /* PrayInfoViewModel.swift */; };
 		EA28EC19297C8E9600A1A695 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC18297C8E9600A1A695 /* Constants.swift */; };
+		EA28EC1C297D8CE900A1A695 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA28EC1E297D8CE900A1A695 /* Localizable.strings */; };
+		EA28EC22297DBEA600A1A695 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC21297DBEA600A1A695 /* Language.swift */; };
+		EA28EC24297DBEED00A1A695 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC23297DBEED00A1A695 /* LanguageService.swift */; };
+		EA28EC29297DC40A00A1A695 /* LocalizationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC28297DC40A00A1A695 /* LocalizationUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,12 @@
 		EA28EC12297C8B7900A1A695 /* PrayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayService.swift; sourceTree = "<group>"; };
 		EA28EC15297C8E2400A1A695 /* PrayInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayInfoViewModel.swift; sourceTree = "<group>"; };
 		EA28EC18297C8E9600A1A695 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EA28EC1D297D8CE900A1A695 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EA28EC1F297D8CF000A1A695 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EA28EC20297D8CF100A1A695 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EA28EC21297DBEA600A1A695 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		EA28EC23297DBEED00A1A695 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
+		EA28EC28297DC40A00A1A695 /* LocalizationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +114,7 @@
 		EA28EBE1297C73DB00A1A695 /* PrayTime */ = {
 			isa = PBXGroup;
 			children = (
+				EA28EC25297DC04700A1A695 /* Extensions */,
 				EA28EC17297C8E8900A1A695 /* Utils */,
 				EA28EC14297C8E0E00A1A695 /* View Models */,
 				EA28EC11297C8B5E00A1A695 /* Services */,
@@ -114,6 +125,7 @@
 				EA28EBE6297C73DC00A1A695 /* Assets.xcassets */,
 				EA28EBEB297C73DC00A1A695 /* PrayTime.entitlements */,
 				EA28EBE8297C73DC00A1A695 /* Preview Content */,
+				EA28EC1E297D8CE900A1A695 /* Localizable.strings */,
 			);
 			path = PrayTime;
 			sourceTree = "<group>";
@@ -147,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				EA28EC0E297C78A100A1A695 /* PrayData.swift */,
+				EA28EC21297DBEA600A1A695 /* Language.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				EA28EC12297C8B7900A1A695 /* PrayService.swift */,
+				EA28EC23297DBEED00A1A695 /* LanguageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -171,8 +185,16 @@
 			isa = PBXGroup;
 			children = (
 				EA28EC18297C8E9600A1A695 /* Constants.swift */,
+				EA28EC28297DC40A00A1A695 /* LocalizationUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EA28EC25297DC04700A1A695 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +283,8 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				tr,
 			);
 			mainGroup = EA28EBD6297C73DB00A1A695;
 			productRefGroup = EA28EBE0297C73DB00A1A695 /* Products */;
@@ -280,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA28EBEA297C73DC00A1A695 /* Preview Assets.xcassets in Resources */,
+				EA28EC1C297D8CE900A1A695 /* Localizable.strings in Resources */,
 				EA28EBE7297C73DC00A1A695 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,8 +332,11 @@
 			files = (
 				EA28EC16297C8E2400A1A695 /* PrayInfoViewModel.swift in Sources */,
 				EA28EC0F297C78A100A1A695 /* PrayData.swift in Sources */,
+				EA28EC29297DC40A00A1A695 /* LocalizationUtils.swift in Sources */,
 				EA28EC13297C8B7900A1A695 /* PrayService.swift in Sources */,
+				EA28EC22297DBEA600A1A695 /* Language.swift in Sources */,
 				EA28EBE5297C73DB00A1A695 /* ContentView.swift in Sources */,
+				EA28EC24297DBEED00A1A695 /* LanguageService.swift in Sources */,
 				EA28EBE3297C73DB00A1A695 /* PrayTimeApp.swift in Sources */,
 				EA28EC19297C8E9600A1A695 /* Constants.swift in Sources */,
 			);
@@ -345,6 +373,19 @@
 			targetProxy = EA28EBFB297C73DC00A1A695 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA28EC1E297D8CE900A1A695 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA28EC1D297D8CE900A1A695 /* en */,
+				EA28EC1F297D8CF000A1A695 /* de */,
+				EA28EC20297D8CF100A1A695 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EA28EC02297C73DC00A1A695 /* Debug */ = {
@@ -473,6 +514,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PrayTime/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pray Time Reminder";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -500,6 +543,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PrayTime/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pray Time Reminder";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (

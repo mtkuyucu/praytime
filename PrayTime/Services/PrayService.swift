@@ -22,17 +22,16 @@ class PrayService : ObservableObject{
         }
         
         let prayData = try! jsonDecoder().decode(PrayData.self, from: data)
-        print(prayData)
         return prayData
     }
     
     func jsonDecoder() -> JSONDecoder {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.dateFormat = Constants.DateFormats.defaultFormat
         
         let dateFormatterWithNoTime = DateFormatter()
-        dateFormatterWithNoTime.dateFormat = "yyyy-MM-dd"
-
+        dateFormatterWithNoTime.dateFormat = Constants.DateFormats.defaultFormatWitNoTime
+        
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .custom({ decoder in
             let container = try decoder.singleValueContainer()
@@ -50,3 +49,4 @@ class PrayService : ObservableObject{
         return decoder;
     }
 }
+

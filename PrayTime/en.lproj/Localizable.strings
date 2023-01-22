@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  PrayTime
+
+  Created by Mehmet Tayyar Kuyucu on 22.01.2023.
+  
+*/
+
+"pray.time.fajr"= "Remaning Time for Fajr %@";
+"pray.time.zuhr"= "Remaning Time for Zuhr %@";
+"pray.time.asr"= "Remaning Time for Asr %@";
+"pray.time.maghrib"= "Remaning Time for Maghrib %@";
+"pray.time.isha"= "Remaning Time for Isha %@";
+

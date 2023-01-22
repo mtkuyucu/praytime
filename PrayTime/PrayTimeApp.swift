@@ -15,8 +15,11 @@ struct PrayTimeApp: App {
     @State var counter = 1
     @State var prayInfo:String = ""
     
+    let localizationUtils = LocalizationUtils.defaultLocalizer;
+    
     init() {
         self._prayInfoModel = State(wrappedValue: PrayInfoViewModel())
+        localizationUtils.setSelectedLanguage(lang: "tr")
     }
     
     var body: some Scene {
@@ -34,7 +37,7 @@ struct PrayTimeApp: App {
                             let timeInterval = nextPrayTime.timeIntervalSince(currentDate)
                             let hours = Int(timeInterval) / 3600
                             let minutes = Int(timeInterval.truncatingRemainder(dividingBy: 3600)) / 60
-                            prayInfo = String(format: prayInfoModel.prayCounter.prayTimeText, "\(hours):\(minutes)")
+                            prayInfo = String(format:localizationUtils.stringForKey(key: prayInfoModel.prayCounter.prayTimeText), String(format: "%02d:%02d", hours,minutes))
                             if(timeInterval <= 0){
                                 Task{
                                     await prayInfoModel.populatePrayInfo()

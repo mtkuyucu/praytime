@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @MainActor
 class PrayInfoViewModel : ObservableObject {
@@ -27,34 +28,34 @@ class PrayInfoViewModel : ObservableObject {
             return PrayCounter()
         }
         
-        let now = Date()
+        let today = Date()
+        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)!
         let todayPrayDate = prayDate.first { prayDate in
-            Calendar.current.isDate(prayDate.date, inSameDayAs: now)
+            Calendar.current.isDate(prayDate.date, inSameDayAs: today)
+        }
+        
+        let tomorrowPrayDate = prayDate.first { prayDate in
+            Calendar.current.isDate(prayDate.date, inSameDayAs: tomorrow)
         }
         
         if let todayPrayDate = todayPrayDate{
-            if(now > todayPrayDate.isha[0].time){
-                print("Sabah Namazina Kalan Sure ?")
-                return PrayCounter(prayTimeText: "Sabah Namazina Kalan Sure :%@", prayTime: todayPrayDate.sunrise[0].time)
+            if(today > todayPrayDate.isha[0].time){
+                return PrayCounter(prayTimeText: "pray.time.fajr", prayTime: tomorrowPrayDate!.sunrise[0].time)
             }
-            if(now > todayPrayDate.maghrib[0].time){
-                print("Yatsi Namazina Kalan Sure ?")
-                return PrayCounter(prayTimeText: "Yatsi Namazina Kalan Sure :%@", prayTime: todayPrayDate.fajr[0].time)
+            if(today > todayPrayDate.maghrib[0].time){
+                return PrayCounter(prayTimeText: "pray.time.isha", prayTime: tomorrowPrayDate!.fajr[0].time)
             }
             
-            if(now > todayPrayDate.asr[0].time){
-                print("Aksam Namazina Kalan Sure ?")
-                return PrayCounter(prayTimeText: "Aksam Namazina Kalan Sure :%@", prayTime: todayPrayDate.maghrib[0].time)
+            if(today > todayPrayDate.asr[0].time){
+                return PrayCounter(prayTimeText: "pray.time.maghrib", prayTime: todayPrayDate.maghrib[0].time)
             }
             
-            if(now > todayPrayDate.zuhr[0].time){
-                print("Ikindi Namazina Kalan Sure ?")
-                return PrayCounter(prayTimeText: "Ikindi Namazina Kalan Sure :%@", prayTime: todayPrayDate.asr[0].time)
+            if(today > todayPrayDate.zuhr[0].time){
+                return PrayCounter(prayTimeText: "pray.time.asr", prayTime: todayPrayDate.asr[0].time)
             }
             
-            if(now > todayPrayDate.sunrise[0].time){
-                print("Ogle Namazina Kalan Sure ?")
-                return PrayCounter(prayTimeText: "Ogle Namazina Kalan Sure :%@", prayTime: todayPrayDate.zuhr[0].time)
+            if(today > todayPrayDate.sunrise[0].time){
+                return PrayCounter(prayTimeText: "pray.time.zuhr", prayTime: todayPrayDate.zuhr[0].time)
             }
         }
         
