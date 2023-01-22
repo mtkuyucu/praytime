@@ -14,6 +14,10 @@
 		EA28EBF5297C73DC00A1A695 /* PrayTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EBF4297C73DC00A1A695 /* PrayTimeTests.swift */; };
 		EA28EBFF297C73DC00A1A695 /* PrayTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EBFE297C73DC00A1A695 /* PrayTimeUITests.swift */; };
 		EA28EC01297C73DC00A1A695 /* PrayTimeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC00297C73DC00A1A695 /* PrayTimeUITestsLaunchTests.swift */; };
+		EA28EC0F297C78A100A1A695 /* PrayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC0E297C78A100A1A695 /* PrayData.swift */; };
+		EA28EC13297C8B7900A1A695 /* PrayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC12297C8B7900A1A695 /* PrayService.swift */; };
+		EA28EC16297C8E2400A1A695 /* PrayInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC15297C8E2400A1A695 /* PrayInfoViewModel.swift */; };
+		EA28EC19297C8E9600A1A695 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA28EC18297C8E9600A1A695 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,11 @@
 		EA28EBFA297C73DC00A1A695 /* PrayTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrayTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA28EBFE297C73DC00A1A695 /* PrayTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayTimeUITests.swift; sourceTree = "<group>"; };
 		EA28EC00297C73DC00A1A695 /* PrayTimeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayTimeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EA28EC0D297C776600A1A695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EA28EC0E297C78A100A1A695 /* PrayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayData.swift; sourceTree = "<group>"; };
+		EA28EC12297C8B7900A1A695 /* PrayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayService.swift; sourceTree = "<group>"; };
+		EA28EC15297C8E2400A1A695 /* PrayInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayInfoViewModel.swift; sourceTree = "<group>"; };
+		EA28EC18297C8E9600A1A695 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +104,11 @@
 		EA28EBE1297C73DB00A1A695 /* PrayTime */ = {
 			isa = PBXGroup;
 			children = (
+				EA28EC17297C8E8900A1A695 /* Utils */,
+				EA28EC14297C8E0E00A1A695 /* View Models */,
+				EA28EC11297C8B5E00A1A695 /* Services */,
+				EA28EC10297C8B2F00A1A695 /* Models */,
+				EA28EC0D297C776600A1A695 /* Info.plist */,
 				EA28EBE2297C73DB00A1A695 /* PrayTimeApp.swift */,
 				EA28EBE4297C73DB00A1A695 /* ContentView.swift */,
 				EA28EBE6297C73DC00A1A695 /* Assets.xcassets */,
@@ -127,6 +141,38 @@
 				EA28EC00297C73DC00A1A695 /* PrayTimeUITestsLaunchTests.swift */,
 			);
 			path = PrayTimeUITests;
+			sourceTree = "<group>";
+		};
+		EA28EC10297C8B2F00A1A695 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA28EC0E297C78A100A1A695 /* PrayData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA28EC11297C8B5E00A1A695 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EA28EC12297C8B7900A1A695 /* PrayService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EA28EC14297C8E0E00A1A695 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA28EC15297C8E2400A1A695 /* PrayInfoViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		EA28EC17297C8E8900A1A695 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EA28EC18297C8E9600A1A695 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA28EC16297C8E2400A1A695 /* PrayInfoViewModel.swift in Sources */,
+				EA28EC0F297C78A100A1A695 /* PrayData.swift in Sources */,
+				EA28EC13297C8B7900A1A695 /* PrayService.swift in Sources */,
 				EA28EBE5297C73DB00A1A695 /* ContentView.swift in Sources */,
 				EA28EBE3297C73DB00A1A695 /* PrayTimeApp.swift in Sources */,
+				EA28EC19297C8E9600A1A695 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +472,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PrayTime/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrayTime/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,6 +499,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PrayTime/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrayTime/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
