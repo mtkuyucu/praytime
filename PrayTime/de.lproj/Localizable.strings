@@ -6,8 +6,9 @@
   
 */
 
-"pray.time.fajr %@"= "Noch Zeit bis zum Fajr %@";
-"pray.time.zuhr %@"= "Noch Zeit bis zum Zuhr %@";
-"pray.time.asr %@"= "Noch Zeit bis zum Asr %@";
-"pray.time.maghrib %@"= "Noch Zeit bis zum Maghrib %@";
-"pray.time.isha %@"= "Noch Zeit bis zum Isha %@";
+"pray.time.fajr"= "Noch Zeit bis zum Fajr %@";
+"pray.time.sunrise"= "Noch Zeit bis zum Fajr %@";
+"pray.time.zuhr"= "Noch Zeit bis zum Zuhr %@";
+"pray.time.asr"= "Noch Zeit bis zum Asr %@";
+"pray.time.maghrib"= "Noch Zeit bis zum Maghrib %@";
+"pray.time.isha"= "Noch Zeit bis zum Isha %@";

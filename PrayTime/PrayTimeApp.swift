@@ -37,7 +37,8 @@ struct PrayTimeApp: App {
                             let timeInterval = nextPrayTime.timeIntervalSince(currentDate)
                             let hours = Int(timeInterval) / 3600
                             let minutes = Int(timeInterval.truncatingRemainder(dividingBy: 3600)) / 60
-                            prayInfo = String(format:localizationUtils.stringForKey(key: prayInfoModel.prayCounter.prayTimeText), String(format: "%02d:%02d", hours,minutes))
+                            let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
+                            prayInfo = String(format:localizationUtils.stringForKey(key: prayInfoModel.prayCounter.prayTimeText), String(format: "%02d:%02d:%02d", hours,minutes,seconds))
                             if(timeInterval <= 0){
                                 Task{
                                     await prayInfoModel.populatePrayInfo()
@@ -48,9 +49,10 @@ struct PrayTimeApp: App {
                         }
                     }
                 })
+                .fixedSize(horizontal: true, vertical: true)
                 .task {
                     await prayInfoModel.populatePrayInfo()
                 }
-        }
+        }.defaultSize(width: 400, height: 44)
     }
 }

@@ -8,6 +8,7 @@
 
 
 "pray.time.fajr"= "Sabah namazına kalan süre %@";
+"pray.time.sunrise"= "Güneşin doğuşuna kalan süre %@";
 "pray.time.zuhr"= "Öğlen namazına kalan süre %@";
 "pray.time.asr"= "İkindi namazına kalan süre %@";
 "pray.time.maghrib"= "Akşam namazına kalan süre %@";

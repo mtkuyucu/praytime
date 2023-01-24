@@ -7,6 +7,7 @@
 */
 
 "pray.time.fajr"= "Remaning Time for Fajr %@";
+"pray.time.sunrise"= "Remaning Time for Sunrise %@";
 "pray.time.zuhr"= "Remaning Time for Zuhr %@";
 "pray.time.asr"= "Remaning Time for Asr %@";
 "pray.time.maghrib"= "Remaning Time for Maghrib %@";

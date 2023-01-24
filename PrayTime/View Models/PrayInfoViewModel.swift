@@ -28,33 +28,43 @@ class PrayInfoViewModel : ObservableObject {
             return PrayCounter()
         }
         
-        let today = Date()
-        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)!
+        let now = Date()
+        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: now)!
         let todayPrayDate = prayDate.first { prayDate in
-            Calendar.current.isDate(prayDate.date, inSameDayAs: today)
+            Calendar.current.isDate(prayDate.date, inSameDayAs: now)
         }
         
-        let tomorrowPrayDate = prayDate.first { prayDate in
+        var tomorrowPrayDate = prayDate.first { prayDate in
             Calendar.current.isDate(prayDate.date, inSameDayAs: tomorrow)
         }
         
+        if(now < (todayPrayDate?.fajr[0].time)!){
+            tomorrowPrayDate = todayPrayDate;
+        }
+        
         if let todayPrayDate = todayPrayDate{
-            if(today > todayPrayDate.isha[0].time){
-                return PrayCounter(prayTimeText: "pray.time.fajr", prayTime: tomorrowPrayDate!.sunrise[0].time)
-            }
-            if(today > todayPrayDate.maghrib[0].time){
-                return PrayCounter(prayTimeText: "pray.time.isha", prayTime: tomorrowPrayDate!.fajr[0].time)
+            
+            if(now > todayPrayDate.fajr[0].time && now < todayPrayDate.sunrise[0].time){
+                return PrayCounter(prayTimeText: "pray.time.sunrise", prayTime: todayPrayDate.sunrise[0].time)
             }
             
-            if(today > todayPrayDate.asr[0].time){
+            if(now > todayPrayDate.isha[0].time || now < todayPrayDate.fajr[0].time){
+                return PrayCounter(prayTimeText: "pray.time.fajr", prayTime: tomorrowPrayDate!.fajr[0].time)
+            }
+            
+            if(now > todayPrayDate.maghrib[0].time){
+                return PrayCounter(prayTimeText: "pray.time.isha", prayTime: todayPrayDate.isha[0].time)
+            }
+            
+            if(now > todayPrayDate.asr[0].time){
                 return PrayCounter(prayTimeText: "pray.time.maghrib", prayTime: todayPrayDate.maghrib[0].time)
             }
             
-            if(today > todayPrayDate.zuhr[0].time){
+            if(now > todayPrayDate.zuhr[0].time){
                 return PrayCounter(prayTimeText: "pray.time.asr", prayTime: todayPrayDate.asr[0].time)
             }
             
-            if(today > todayPrayDate.sunrise[0].time){
+            if(now > todayPrayDate.sunrise[0].time){
                 return PrayCounter(prayTimeText: "pray.time.zuhr", prayTime: todayPrayDate.zuhr[0].time)
             }
         }
